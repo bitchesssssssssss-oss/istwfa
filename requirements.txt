@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+uvloop
+curl-cffi==0.7.4
+requests
+psutil
