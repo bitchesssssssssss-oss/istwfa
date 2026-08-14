@@ -134,13 +134,14 @@ async def check(
     bot_status = {"charged":"Charged","approved":"Approved","declined":"Declined"}.get(status,"SiteError")
 
     return JSONResponse({
-        "Status":   bot_status,
-        "Response": result.get("result", ""),
-        "Price":    result.get("amount", "-"),
-        "Gateway":  "kayoosh",
-        "Card":     cc,
-        "site":     site,
-        "elapsed":  elapsed,
+        "Status":      bot_status,
+        "Response":    result.get("result", ""),
+        "Price":       result.get("amount", "-"),
+        "ReceiptUrl":  result.get("receipt_url", ""),
+        "Gateway":     "kayoosh",
+        "Card":        cc,
+        "site":        site,
+        "elapsed":     elapsed,
     })
 
 if __name__ == "__main__":
